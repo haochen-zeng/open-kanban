@@ -1,0 +1,139 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/open_kanban/kanban.gd" type="Script" id=1]
+[ext_resource path="res://addons/open_kanban/res/box/inner_pressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://addons/open_kanban/res/fonts/light.tres" type="DynamicFont" id=4]
+[ext_resource path="res://addons/open_kanban/res/box/inner.tres" type="StyleBox" id=5]
+[ext_resource path="res://addons/open_kanban/res/images/ui/logo.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+content_margin_left = 12.0
+content_margin_right = 12.0
+content_margin_top = 12.0
+content_margin_bottom = 12.0
+
+[node name="kanban" type="Control" groups=["kanban"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 200 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="panel" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="vbox" type="VBoxContainer" parent="panel"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 1012.0
+margin_bottom = 588.0
+custom_constants/separation = 12
+
+[node name="tab" type="HBoxContainer" parent="panel/vbox"]
+margin_right = 1000.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 48 )
+custom_constants/separation = 12
+
+[node name="logo" type="TextureRect" parent="panel/vbox/tab"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 1
+
+[node name="add_page" type="ToolButton" parent="panel/vbox/tab"]
+margin_left = 60.0
+margin_right = 148.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 5 )
+text = "添加页面"
+flat = false
+
+[node name="search" type="ToolButton" parent="panel/vbox/tab"]
+margin_left = 160.0
+margin_right = 216.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 5 )
+text = "搜索"
+flat = false
+
+[node name="filter" type="ToolButton" parent="panel/vbox/tab"]
+margin_left = 228.0
+margin_right = 284.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 5 )
+text = "筛选"
+flat = false
+
+[node name="align" type="ToolButton" parent="panel/vbox/tab"]
+margin_left = 296.0
+margin_right = 352.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 5 )
+text = "排列"
+flat = false
+
+[node name="settings" type="ToolButton" parent="panel/vbox/tab"]
+margin_left = 364.0
+margin_right = 420.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 5 )
+text = "设置"
+flat = false
+
+[node name="scroll" type="ScrollContainer" parent="panel/vbox"]
+margin_top = 60.0
+margin_right = 1000.0
+margin_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="hbox" type="HBoxContainer" parent="panel/vbox/scroll"]
+margin_right = 1000.0
+margin_bottom = 516.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 12
+
+[node name="button" type="ToolButton" parent="panel/vbox/scroll/hbox"]
+margin_right = 245.0
+margin_bottom = 116.0
+rect_min_size = Vector2( 245, 116 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 5 )
+text = "+ 添加列表"
+flat = false
+
+[connection signal="sort_children" from="panel/vbox/scroll/hbox" to="." method="_on_hbox_sort_children"]
+[connection signal="pressed" from="panel/vbox/scroll/hbox/button" to="." method="_on_add_pressed"]
