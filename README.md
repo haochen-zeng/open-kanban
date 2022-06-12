@@ -10,7 +10,7 @@ Open Kanban is a godot workflow management plugin for managing and improving gam
 
 Support me on [Patreon](https://patreon.com/exspiravit1104).
 
-[给我点钱，钱=动力，谢谢支持。](https://afdian.net/@exspiravit)
+[金金金金金金金金金金金金金金金金金金（？](https://afdian.net/@exspiravit)
 
 ---
 
