@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/logo.png-ee871fa1afd11652f86cad0fbedb3e9b.stex"
+path="res://.import/icon.png-fec3fd977dda56e1f426eba780d26ad8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/open_kanban/res/images/ui/logo.png"
-dest_files=[ "res://.import/logo.png-ee871fa1afd11652f86cad0fbedb3e9b.stex" ]
+source_file="res://addons/open_kanban/res/images/ui/icon.png"
+dest_files=[ "res://.import/icon.png-fec3fd977dda56e1f426eba780d26ad8.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -6,8 +6,10 @@ onready var hbox = $panel/vbox/scroll/hbox
 onready var scroll = $panel/vbox/scroll
 var hscroll_max : float
 var vscroll_max : float
+var drag_component : Object
 
 func _ready() -> void:
+	print(rect_size)
 	scroll.get_h_scrollbar().connect("changed", self, "push_hscroll")
 	scroll.get_v_scrollbar().connect("changed", self, "push_vscroll")
 
@@ -26,3 +28,7 @@ func push_vscroll() -> void:
 	if vscroll_max < scroll.get_v_scrollbar().max_value:
 		scroll.scroll_vertical = scroll.get_v_scrollbar().max_value
 	vscroll_max = scroll.get_v_scrollbar().max_value
+
+func _input(event) -> void:
+	if !Input.is_mouse_button_pressed(BUTTON_LEFT):
+		drag_component = null

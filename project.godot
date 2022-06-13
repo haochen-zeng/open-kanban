@@ -9,13 +9,13 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
-"class": "KanbanResources",
+"base": "ToolButton",
+"class": "DragComponent",
 "language": "GDScript",
-"path": "res://addons/open_kanban/system/kanban_resources.gd"
+"path": "res://addons/open_kanban/system/drag_component.gd"
 } ]
 _global_script_class_icons={
-"KanbanResources": ""
+"DragComponent": ""
 }
 
 [application]
@@ -26,11 +26,18 @@ It helps you visualize work, maximize efficiency, and improve continuously.
 
 开源看板是一个工作流程管理工具。
 它可帮助你将游戏项目计划可视化，最大限度地提高效率，并不断整理布局。"
-config/icon="res://addons/open_kanban/res/images/ui/logo.png"
+config/icon="res://icon.png"
+config/macos_native_icon="res://icon.icns"
+config/windows_native_icon="res://icon.ico"
+
+[discord_presence]
+
+first_button/label="Open Kanban"
+first_button/url="https://github.com/EXSPIRAVIT1104OFFICIAL/open-kanban"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/open_kanban/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/godot_editor_discord_presence/plugin.cfg", "res://addons/open_kanban/plugin.cfg" )
 
 [input]
 

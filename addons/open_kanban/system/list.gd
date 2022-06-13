@@ -2,6 +2,8 @@ tool
 extends VBoxContainer
 
 onready var tab = $tab
+onready var drag_button = $tab/drag
+onready var add = $container/vbox/add
 onready var title_line_edit = $tab/title/line_edit
 onready var label = $tab/title/label
 onready var button = $tab/title/button
@@ -9,7 +11,12 @@ onready var num = $tab/num
 onready var container = $container/vbox
 onready var card_line_edit = $container/vbox/add/card_title
 const card = preload("res://addons/open_kanban/system/card.tscn")
-var drag : bool
+var kanban : Object
+
+func _ready() -> void:
+	drag_button.box = $"."
+	drag_button.type = "list"
+	kanban = EditorPlugin.new().get_editor_interface().get_editor_viewport().get_node("kanban")
 
 func title_edit() -> void:
 	title_line_edit.grab_focus()
@@ -35,16 +42,8 @@ func _on_card_title_text_entered(new_text):
 		container.move_child(scene, container.get_child_count() - 2)
 		card_line_edit.text = ""
 
-func _on_drag_button_down():
-	drag = true
-
-func _on_drag_button_up():
-	drag = false
-
 func _input(event) -> void:
-	if event is InputEventMouseMotion:
-		for i in get_parent().get_children():
-			if i.get("drag") and i != self and Rect2(rect_global_position, rect_size).has_point(get_global_mouse_position()):
-				var x = i.get_index()
-				get_parent().move_child(i, get_index())
-				get_parent().move_child(self, x)
+	if Rect2(add.rect_global_position, add.rect_size).has_point(get_global_mouse_position()) and kanban.drag_component and kanban.drag_component.type == "card":
+		kanban.drag_component.box.get_parent().remove_child(kanban.drag_component.box)
+		container.add_child(kanban.drag_component.box)
+		container.move_child(kanban.drag_component.box, 0)

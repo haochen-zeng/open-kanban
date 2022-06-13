@@ -1,7 +1,11 @@
 tool
-extends PanelContainer
+extends DragComponent
 
-onready var title = $title
+onready var title = $panel/title
+
+func _ready() -> void:
+	box = $"."
+	type = "card"
 
 func set_title(value : String) -> void:
 	title.text = value

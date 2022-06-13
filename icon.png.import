@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/search.png-cb90a98533a79f8957ee6e04bdd71c0b.stex"
+path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/open_kanban/res/images/ui/search.png"
-dest_files=[ "res://.import/search.png-cb90a98533a79f8957ee6e04bdd71c0b.stex" ]
+source_file="res://icon.png"
+dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
 
 [params]
 

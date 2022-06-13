@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://addons/open_kanban/kanban.gd" type="Script" id=1]
+[ext_resource path="res://addons/open_kanban/res/images/ui/icon.png" type="Texture" id=2]
 [ext_resource path="res://addons/open_kanban/res/box/inner_pressed.tres" type="StyleBox" id=3]
 [ext_resource path="res://addons/open_kanban/res/fonts/light.tres" type="DynamicFont" id=4]
 [ext_resource path="res://addons/open_kanban/res/box/inner.tres" type="StyleBox" id=5]
-[ext_resource path="res://addons/open_kanban/res/images/ui/logo.png" type="Texture" id=7]
+[ext_resource path="res://addons/open_kanban/res/box/outer.tres" type="StyleBox" id=6]
+[ext_resource path="res://addons/open_kanban/res/box/outer_pressed.tres" type="StyleBox" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 content_margin_left = 12.0
@@ -12,7 +14,7 @@ content_margin_right = 12.0
 content_margin_top = 12.0
 content_margin_bottom = 12.0
 
-[node name="kanban" type="Control" groups=["kanban"]]
+[node name="kanban" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 0, 200 )
@@ -49,7 +51,7 @@ custom_constants/separation = 12
 margin_right = 48.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
-texture = ExtResource( 7 )
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 1
 
@@ -86,7 +88,7 @@ custom_styles/normal = ExtResource( 5 )
 text = "筛选"
 flat = false
 
-[node name="align" type="ToolButton" parent="panel/vbox/tab"]
+[node name="sort" type="ToolButton" parent="panel/vbox/tab"]
 margin_left = 296.0
 margin_right = 352.0
 margin_bottom = 48.0
@@ -124,16 +126,15 @@ custom_constants/separation = 12
 
 [node name="button" type="ToolButton" parent="panel/vbox/scroll/hbox"]
 margin_right = 245.0
-margin_bottom = 116.0
-rect_min_size = Vector2( 245, 116 )
+margin_bottom = 126.0
+rect_min_size = Vector2( 245, 126 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 4 )
-custom_styles/hover = ExtResource( 3 )
-custom_styles/pressed = ExtResource( 3 )
-custom_styles/normal = ExtResource( 5 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 6 )
 text = "+ 添加列表"
 flat = false
 
-[connection signal="sort_children" from="panel/vbox/scroll/hbox" to="." method="_on_hbox_sort_children"]
 [connection signal="pressed" from="panel/vbox/scroll/hbox/button" to="." method="_on_add_pressed"]
