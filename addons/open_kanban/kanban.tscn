@@ -45,7 +45,7 @@ custom_constants/separation = 12
 margin_right = 1000.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 0, 48 )
-custom_constants/separation = 12
+custom_constants/separation = 6
 
 [node name="logo" type="TextureRect" parent="panel/vbox/tab"]
 margin_right = 48.0
@@ -56,8 +56,8 @@ expand = true
 stretch_mode = 1
 
 [node name="add_page" type="ToolButton" parent="panel/vbox/tab"]
-margin_left = 60.0
-margin_right = 148.0
+margin_left = 54.0
+margin_right = 142.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 4 )
 custom_styles/hover = ExtResource( 3 )
@@ -67,8 +67,8 @@ text = "添加页面"
 flat = false
 
 [node name="search" type="ToolButton" parent="panel/vbox/tab"]
-margin_left = 160.0
-margin_right = 216.0
+margin_left = 148.0
+margin_right = 204.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 4 )
 custom_styles/hover = ExtResource( 3 )
@@ -78,8 +78,8 @@ text = "搜索"
 flat = false
 
 [node name="filter" type="ToolButton" parent="panel/vbox/tab"]
-margin_left = 228.0
-margin_right = 284.0
+margin_left = 210.0
+margin_right = 266.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 4 )
 custom_styles/hover = ExtResource( 3 )
@@ -89,8 +89,8 @@ text = "筛选"
 flat = false
 
 [node name="sort" type="ToolButton" parent="panel/vbox/tab"]
-margin_left = 296.0
-margin_right = 352.0
+margin_left = 272.0
+margin_right = 328.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 4 )
 custom_styles/hover = ExtResource( 3 )
@@ -100,8 +100,8 @@ text = "排列"
 flat = false
 
 [node name="settings" type="ToolButton" parent="panel/vbox/tab"]
-margin_left = 364.0
-margin_right = 420.0
+margin_left = 334.0
+margin_right = 390.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 4 )
 custom_styles/hover = ExtResource( 3 )
@@ -124,7 +124,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 12
 
-[node name="button" type="ToolButton" parent="panel/vbox/scroll/hbox"]
+[node name="add" type="ToolButton" parent="panel/vbox/scroll/hbox"]
 margin_right = 245.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 245, 126 )
@@ -137,4 +137,4 @@ custom_styles/normal = ExtResource( 6 )
 text = "+ 添加列表"
 flat = false
 
-[connection signal="pressed" from="panel/vbox/scroll/hbox/button" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="panel/vbox/scroll/hbox/add" to="." method="_on_add_pressed"]

@@ -4,7 +4,7 @@ extends VBoxContainer
 onready var tab = $tab
 onready var drag_button = $tab/drag
 onready var add = $container/vbox/add
-onready var title_line_edit = $tab/title/line_edit
+onready var title_line_edit = $tab/title/list_title
 onready var label = $tab/title/label
 onready var button = $tab/title/button
 onready var num = $tab/num
@@ -25,7 +25,7 @@ func title_edit() -> void:
 	label.hide()
 	button.hide()
 
-func _on_line_edit_text_entered(new_text) -> void:
+func _on_list_title_text_entered(new_text : String = title_line_edit.text):
 	label.text = new_text
 	title_line_edit.hide()
 	label.show()
@@ -43,7 +43,7 @@ func _on_card_title_text_entered(new_text):
 		card_line_edit.text = ""
 
 func _input(event) -> void:
-	if Rect2(add.rect_global_position, add.rect_size).has_point(get_global_mouse_position()) and kanban.drag_component and kanban.drag_component.type == "card":
+	if event is InputEventMouseMotion and Rect2(add.rect_global_position, add.rect_size).has_point(get_global_mouse_position()) and kanban.drag_component and kanban.drag_component.type == "card":
 		kanban.drag_component.box.get_parent().remove_child(kanban.drag_component.box)
 		container.add_child(kanban.drag_component.box)
-		container.move_child(kanban.drag_component.box, 0)
+		container.move_child(kanban.drag_component.box, container.get_child_count() - 2)

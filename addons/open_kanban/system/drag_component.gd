@@ -20,7 +20,7 @@ func button_up():
 	kanban.drag_component = null
 
 func _input(event) -> void:
-	if Rect2(box.rect_global_position, box.rect_size).has_point(get_global_mouse_position()) and kanban.drag_component != self and kanban.drag_component:
+	if event is InputEventMouseMotion and Rect2(box.rect_global_position, box.rect_size).has_point(get_global_mouse_position()) and kanban.drag_component != self and kanban.drag_component:
 		if kanban.drag_component.box.get_parent() == box.get_parent():
 			box.get_parent().move_child(kanban.drag_component.box, box.get_index())
 		else:
