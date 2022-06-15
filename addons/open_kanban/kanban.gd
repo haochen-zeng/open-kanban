@@ -31,8 +31,8 @@ func push_vscroll() -> void:
 	vscroll_max = scroll.get_v_scrollbar().max_value
 
 func _input(event) -> void:
-	if !Input.is_mouse_button_pressed(BUTTON_LEFT):
-		drag_component = null
+	if !Input.is_mouse_button_pressed(BUTTON_LEFT) and drag_component:
+		drag_component.button_down()
 
 func _process(_delta):
 	drag_view.rect_global_position = get_global_mouse_position() - drag_view.rect_size / 2

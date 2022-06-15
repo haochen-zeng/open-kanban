@@ -17,4 +17,6 @@ custom_styles/pressed = ExtResource( 2 )
 custom_styles/focus = ExtResource( 2 )
 custom_styles/disabled = ExtResource( 2 )
 custom_styles/normal = ExtResource( 3 )
+action_mode = 0
+keep_pressed_outside = true
 flat = false

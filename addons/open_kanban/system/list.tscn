@@ -52,8 +52,6 @@ anchor_bottom = 0.0
 margin_right = 24.0
 margin_bottom = 48.0
 mouse_default_cursor_shape = 13
-action_mode = 0
-keep_pressed_outside = true
 script = ExtResource( 7 )
 
 [node name="texture" type="TextureRect" parent="tab/drag"]
