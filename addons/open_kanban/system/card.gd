@@ -3,6 +3,7 @@ extends PanelContainer
 
 onready var title = $panel/title
 onready var drag_button = $drag
+onready var rect = $rect
 
 func _ready() -> void:
 	drag_button.box = $"."
@@ -11,5 +12,5 @@ func _ready() -> void:
 func set_title(value : String) -> void:
 	title.text = value
 
-func get_title() -> void:
+func get_title() -> String:
 	return title.text

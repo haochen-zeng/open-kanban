@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/open_kanban/res/fonts/regular.tres" type="DynamicFont" id=2]
 [ext_resource path="res://addons/open_kanban/system/line_edit.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/open_kanban/res/images/ui/darg.png" type="Texture" id=4]
 [ext_resource path="res://addons/open_kanban/res/images/ui/settings.png" type="Texture" id=6]
+[ext_resource path="res://addons/open_kanban/system/drag_component.gd" type="Script" id=7]
 [ext_resource path="res://addons/open_kanban/system/list.gd" type="Script" id=8]
 [ext_resource path="res://addons/open_kanban/res/box/empty.tres" type="StyleBox" id=9]
 [ext_resource path="res://addons/open_kanban/system/tool_button.tscn" type="PackedScene" id=10]
@@ -53,6 +54,7 @@ margin_bottom = 48.0
 mouse_default_cursor_shape = 13
 action_mode = 0
 keep_pressed_outside = true
+script = ExtResource( 7 )
 
 [node name="texture" type="TextureRect" parent="tab/drag"]
 anchor_right = 1.0

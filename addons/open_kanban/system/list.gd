@@ -40,9 +40,3 @@ func _on_card_title_text_entered(new_text):
 		scene.set_title(new_text)
 		container.move_child(scene, container.get_child_count() - 2)
 		card_line_edit.text = ""
-
-func _input(event) -> void:
-	if event is InputEventMouseMotion and container.get_child_count() == 1 and kanban.drag_component and kanban.drag_component.type == "card" and Rect2(add.rect_global_position, add.rect_size).has_point(get_global_mouse_position()):
-		kanban.drag_component.box.get_parent().remove_child(kanban.drag_component.box)
-		container.add_child(kanban.drag_component.box)
-		container.move_child(kanban.drag_component.box, container.get_child_count() - 2)
