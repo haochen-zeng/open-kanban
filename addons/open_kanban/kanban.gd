@@ -4,6 +4,7 @@ extends Control
 const list = preload("res://addons/open_kanban/system/list.tscn")
 onready var hbox = $panel/vbox/scroll/hbox
 onready var scroll = $panel/vbox/scroll
+onready var drag_view = $drag_view
 var hscroll_max : float
 var vscroll_max : float
 var drag_component : Object

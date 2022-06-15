@@ -11,11 +11,10 @@ func _ready() -> void:
 	connect("button_up", self, "button_up")
 
 func button_down():
-	print("button_down")
+	
 	kanban.drag_component = self
 
 func button_up():
-	print("button_up")
 	kanban.drag_component = null
 
 func _input(event) -> void:

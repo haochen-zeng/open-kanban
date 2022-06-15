@@ -10,3 +10,6 @@ func _ready() -> void:
 
 func set_title(value : String) -> void:
 	title.text = value
+
+func get_title() -> void:
+	return title.text

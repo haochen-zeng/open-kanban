@@ -1,14 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://addons/open_kanban/res/box/inner_pressed.tres" type="StyleBox" id=1]
 [ext_resource path="res://addons/open_kanban/res/fonts/regular.tres" type="DynamicFont" id=2]
 [ext_resource path="res://addons/open_kanban/system/line_edit.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/open_kanban/res/images/ui/darg.png" type="Texture" id=4]
-[ext_resource path="res://addons/open_kanban/res/box/inner.tres" type="StyleBox" id=5]
 [ext_resource path="res://addons/open_kanban/res/images/ui/settings.png" type="Texture" id=6]
-[ext_resource path="res://addons/open_kanban/system/drag_component.gd" type="Script" id=7]
 [ext_resource path="res://addons/open_kanban/system/list.gd" type="Script" id=8]
 [ext_resource path="res://addons/open_kanban/res/box/empty.tres" type="StyleBox" id=9]
+[ext_resource path="res://addons/open_kanban/system/tool_button.tscn" type="PackedScene" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=14]
 
@@ -47,19 +45,14 @@ margin_bottom = 48.0
 rect_min_size = Vector2( 240, 48 )
 custom_constants/separation = 6
 
-[node name="drag" type="ToolButton" parent="tab"]
+[node name="drag" parent="tab" instance=ExtResource( 10 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 24.0
 margin_bottom = 48.0
-rect_min_size = Vector2( 0, 48 )
 mouse_default_cursor_shape = 13
-size_flags_vertical = 4
-custom_styles/hover = ExtResource( 1 )
-custom_styles/pressed = ExtResource( 1 )
-custom_styles/normal = ExtResource( 5 )
 action_mode = 0
 keep_pressed_outside = true
-flat = false
-script = ExtResource( 7 )
 
 [node name="texture" type="TextureRect" parent="tab/drag"]
 anchor_right = 1.0
@@ -111,18 +104,12 @@ text = "0"
 align = 1
 valign = 1
 
-[node name="settings" type="ToolButton" parent="tab"]
+[node name="settings" parent="tab" instance=ExtResource( 10 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 221.0
 margin_right = 245.0
 margin_bottom = 48.0
-rect_min_size = Vector2( 0, 48 )
-size_flags_vertical = 4
-custom_styles/hover = ExtResource( 1 )
-custom_styles/pressed = ExtResource( 1 )
-custom_styles/normal = ExtResource( 5 )
-action_mode = 0
-keep_pressed_outside = true
-flat = false
 
 [node name="texture" type="TextureRect" parent="tab/settings"]
 anchor_right = 1.0
@@ -160,11 +147,11 @@ margin_top = 12.0
 margin_right = 209.0
 margin_bottom = 36.0
 custom_colors/cursor_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-custom_colors/clear_button_color_pressed = Color( 0.760784, 0.760784, 0.760784, 1 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/clear_button_color_pressed = Color( 0.647059, 0.647059, 0.647059, 1 )
+custom_colors/font_color_selected = Color( 0.878431, 0.878431, 0.878431, 1 )
+custom_colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 custom_colors/clear_button_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-custom_colors/font_color_uneditable = Color( 1, 1, 1, 1 )
+custom_colors/font_color_uneditable = Color( 0.878431, 0.878431, 0.878431, 1 )
 placeholder_text = "+ 添加卡片"
 
 [connection signal="focus_exited" from="tab/title/list_title" to="." method="_on_list_title_text_entered"]
