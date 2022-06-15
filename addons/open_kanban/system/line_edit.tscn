@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/open_kanban/system/line_edit.gd" type="Script" id=1]
 [ext_resource path="res://addons/open_kanban/res/fonts/light.tres" type="DynamicFont" id=2]
+[ext_resource path="res://addons/open_kanban/res/images/ui/cross.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=10]
 
@@ -14,7 +15,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_colors/cursor_color = Color( 0.141176, 0.141176, 0.141176, 1 )
+custom_colors/clear_button_color_pressed = Color( 0.141176, 0.141176, 0.141176, 1 )
+custom_colors/clear_button_color = Color( 0.352941, 0.352941, 0.352941, 1 )
 custom_fonts/font = ExtResource( 2 )
+custom_icons/clear = ExtResource( 3 )
 custom_styles/read_only = SubResource( 10 )
 custom_styles/focus = SubResource( 11 )
 custom_styles/normal = SubResource( 12 )

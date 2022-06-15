@@ -1,6 +1,7 @@
 tool
 extends VBoxContainer
 
+onready var kanban = EditorPlugin.new().get_editor_interface().get_editor_viewport().get_node("kanban")
 onready var tab = $tab
 onready var drag_button = $tab/drag
 onready var add = $container/vbox/add
@@ -11,7 +12,6 @@ onready var num = $tab/num
 onready var container = $container/vbox
 onready var card_line_edit = $container/vbox/add/card_title
 const card = preload("res://addons/open_kanban/system/card.tscn")
-onready var kanban = EditorPlugin.new().get_editor_interface().get_editor_viewport().get_node("kanban")
 
 func _ready() -> void:
 	drag_button.box = $"."

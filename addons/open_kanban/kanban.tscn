@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/open_kanban/kanban.gd" type="Script" id=1]
 [ext_resource path="res://addons/open_kanban/res/images/ui/icon.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://addons/open_kanban/res/box/inner.tres" type="StyleBox" id=5]
 [ext_resource path="res://addons/open_kanban/res/box/outer.tres" type="StyleBox" id=6]
 [ext_resource path="res://addons/open_kanban/res/box/outer_pressed.tres" type="StyleBox" id=7]
+[ext_resource path="res://addons/open_kanban/system/auto_scroll_mover.gd" type="Script" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 content_margin_left = 12.0
@@ -28,6 +29,60 @@ __meta__ = {
 [node name="bg" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="move" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="h" type="HBoxContainer" parent="move"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="-1" type="Control" parent="move/h"]
+margin_right = 192.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 192, 0 )
+script = ExtResource( 8 )
+
+[node name="0" type="Control" parent="move/h"]
+margin_left = 196.0
+margin_right = 828.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 8 )
+
+[node name="1" type="Control" parent="move/h"]
+margin_left = 832.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 192, 0 )
+script = ExtResource( 8 )
+
+[node name="v" type="VBoxContainer" parent="move"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="-1" type="Control" parent="move/v"]
+margin_right = 1024.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 0, 192 )
+script = ExtResource( 8 )
+
+[node name="0" type="Control" parent="move/v"]
+margin_top = 196.0
+margin_right = 1024.0
+margin_bottom = 404.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 8 )
+
+[node name="1" type="Control" parent="move/v"]
+margin_top = 408.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 192 )
+script = ExtResource( 8 )
 
 [node name="panel" type="PanelContainer" parent="."]
 anchor_right = 1.0

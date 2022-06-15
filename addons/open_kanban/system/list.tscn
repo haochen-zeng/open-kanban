@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/open_kanban/res/box/inner_pressed.tres" type="StyleBox" id=1]
 [ext_resource path="res://addons/open_kanban/res/fonts/regular.tres" type="DynamicFont" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://addons/open_kanban/res/images/ui/settings.png" type="Texture" id=6]
 [ext_resource path="res://addons/open_kanban/system/drag_component.gd" type="Script" id=7]
 [ext_resource path="res://addons/open_kanban/system/list.gd" type="Script" id=8]
+[ext_resource path="res://addons/open_kanban/res/box/empty.tres" type="StyleBox" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=14]
 
@@ -79,6 +80,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 183.0
 margin_bottom = 48.0
+custom_fonts/font = ExtResource( 2 )
 max_length = 48
 placeholder_text = "未命名"
 
@@ -148,7 +150,7 @@ margin_bottom = 48.0
 rect_min_size = Vector2( 221, 48 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = ExtResource( 1 )
+custom_styles/panel = ExtResource( 9 )
 
 [node name="card_title" parent="container/vbox/add" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -157,6 +159,12 @@ margin_left = 12.0
 margin_top = 12.0
 margin_right = 209.0
 margin_bottom = 36.0
+custom_colors/cursor_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+custom_colors/clear_button_color_pressed = Color( 0.760784, 0.760784, 0.760784, 1 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/clear_button_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+custom_colors/font_color_uneditable = Color( 1, 1, 1, 1 )
 placeholder_text = "+ 添加卡片"
 
 [connection signal="focus_exited" from="tab/title/list_title" to="." method="_on_list_title_text_entered"]

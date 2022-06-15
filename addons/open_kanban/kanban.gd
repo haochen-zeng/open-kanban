@@ -20,12 +20,12 @@ func _on_add_pressed() -> void:
 	scene.title_edit()
 
 func push_hscroll() -> void:
-	if hscroll_max < scroll.get_h_scrollbar().max_value:
+	if hscroll_max < scroll.get_h_scrollbar().max_value and !drag_component:
 		scroll.scroll_horizontal = scroll.get_h_scrollbar().max_value
 	hscroll_max = scroll.get_h_scrollbar().max_value
 
 func push_vscroll() -> void:
-	if vscroll_max < scroll.get_v_scrollbar().max_value:
+	if vscroll_max < scroll.get_v_scrollbar().max_value and !drag_component:
 		scroll.scroll_vertical = scroll.get_v_scrollbar().max_value
 	vscroll_max = scroll.get_v_scrollbar().max_value
 
