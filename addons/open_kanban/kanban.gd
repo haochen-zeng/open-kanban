@@ -33,15 +33,21 @@ func push_vscroll() -> void:
 func _input(event) -> void:
 	if !Input.is_mouse_button_pressed(BUTTON_LEFT) and drag_component:
 		drag_component.button_down()
+	if event is InputEventMouseMotion:
+		drag_view.rect_rotation += event.relative.x
+		drag_view.rect_rotation = clamp(drag_view.rect_rotation, -45, 45)
 
-func _process(_delta):
-	drag_view.rect_global_position = get_global_mouse_position() - drag_view.rect_size / 2
+func _process(_delta) -> void:
+	if drag_view:
+		drag_view.rect_global_position = get_global_mouse_position()
+		drag_view.rect_rotation = lerp(drag_view.rect_rotation, 0, 0.2)
 
 func set_drag_component(value : Object) -> void:
 	if value and value.type == "card":
 		set_process(true)
-		drag_view.rect_size = drag_view.rect_min_size
-		drag_view.set_title(value.box.get_title())
+		drag_view.rect_rotation = 0
+		drag_view.get_child(0).rect_size = drag_view.get_child(0).rect_min_size
+		drag_view.get_child(0).set_title(value.box.get_title())
 		drag_view.show()
 	else:
 		set_process(false)

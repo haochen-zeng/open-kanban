@@ -38,6 +38,7 @@ anchor_bottom = 0.0
 margin_right = 1024.0
 margin_bottom = 600.0
 mouse_default_cursor_shape = 13
+shortcut_in_tooltip = false
 shortcut = SubResource( 9 )
 script = ExtResource( 5 )
 

@@ -186,44 +186,48 @@ rect_min_size = Vector2( 245, 126 )
 size_flags_vertical = 0
 text = "+ 添加页面"
 
-[node name="drag_view" type="PanelContainer" parent="."]
+[node name="drag_view" type="CenterContainer" parent="."]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -511.997
-margin_top = -300.0
-margin_right = 511.997
-margin_bottom = 300.0
+use_top_left = true
+
+[node name="panel" type="PanelContainer" parent="drag_view"]
+margin_left = -111.0
+margin_top = -24.0
+margin_right = 110.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 221, 48 )
 mouse_filter = 2
+mouse_default_cursor_shape = 13
 custom_styles/panel = SubResource( 7 )
 script = ExtResource( 6 )
 
-[node name="drag" parent="drag_view" instance=ExtResource( 9 )]
+[node name="drag" parent="drag_view/panel" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1023.99
-margin_bottom = 600.0
+margin_right = 221.0
+margin_bottom = 48.0
 mouse_filter = 2
 mouse_default_cursor_shape = 13
 disabled = true
 
-[node name="panel" type="PanelContainer" parent="drag_view"]
-margin_right = 1023.99
-margin_bottom = 600.0
+[node name="panel" type="PanelContainer" parent="drag_view/panel"]
+margin_right = 221.0
+margin_bottom = 48.0
 rect_min_size = Vector2( 191, 48 )
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 6 )
 
-[node name="title" type="Label" parent="drag_view/panel"]
+[node name="title" type="Label" parent="drag_view/panel/panel"]
 margin_left = 12.0
 margin_top = 12.0
-margin_right = 1011.99
-margin_bottom = 588.0
+margin_right = 209.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
