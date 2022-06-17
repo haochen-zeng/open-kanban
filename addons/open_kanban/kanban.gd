@@ -10,7 +10,7 @@ var vscroll_max : float
 var drag_component : Object setget set_drag_component
 
 func _ready() -> void:
-	print(rect_size)
+	print("Open Kanban initiated...\n欢迎使用开源看板")
 	scroll.get_h_scrollbar().connect("changed", self, "push_hscroll")
 	scroll.get_v_scrollbar().connect("changed", self, "push_vscroll")
 

@@ -29,6 +29,7 @@ func _on_list_title_text_entered(new_text : String = title_line_edit.text):
 	title_line_edit.hide()
 	label.show()
 	button.show()
+	card_line_edit.grab_focus()
 
 func _on_vbox_sort_children():
 	num.text = str(container.get_child_count() - 1)

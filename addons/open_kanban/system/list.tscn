@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/open_kanban/res/fonts/regular.tres" type="DynamicFont" id=2]
 [ext_resource path="res://addons/open_kanban/system/line_edit.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/open_kanban/res/images/ui/darg.png" type="Texture" id=4]
-[ext_resource path="res://addons/open_kanban/res/images/ui/settings.png" type="Texture" id=6]
 [ext_resource path="res://addons/open_kanban/system/drag_component.gd" type="Script" id=7]
 [ext_resource path="res://addons/open_kanban/system/list.gd" type="Script" id=8]
 [ext_resource path="res://addons/open_kanban/res/box/empty.tres" type="StyleBox" id=9]
@@ -58,11 +57,12 @@ script = ExtResource( 7 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 4 )
+expand = true
 stretch_mode = 4
 
 [node name="title" type="PanelContainer" parent="tab"]
 margin_left = 30.0
-margin_right = 201.0
+margin_right = 231.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
 custom_styles/panel = SubResource( 14 )
@@ -74,11 +74,10 @@ anchor_bottom = 0.0
 margin_right = 183.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 2 )
-max_length = 48
-placeholder_text = "未命名"
+max_length = 24
 
 [node name="label" type="Label" parent="tab/title"]
-margin_right = 171.0
+margin_right = 201.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -89,33 +88,20 @@ valign = 1
 autowrap = true
 
 [node name="button" type="ToolButton" parent="tab/title"]
-margin_right = 171.0
+margin_right = 201.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="num" type="Label" parent="tab"]
-margin_left = 207.0
-margin_right = 215.0
+margin_left = 237.0
+margin_right = 245.0
 margin_bottom = 48.0
 size_flags_vertical = 5
 custom_colors/font_color = Color( 0.352941, 0.352941, 0.352941, 1 )
 text = "0"
 align = 1
 valign = 1
-
-[node name="settings" parent="tab" instance=ExtResource( 10 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 221.0
-margin_right = 245.0
-margin_bottom = 48.0
-
-[node name="texture" type="TextureRect" parent="tab/settings"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 6 )
-stretch_mode = 4
 
 [node name="container" type="PanelContainer" parent="."]
 margin_top = 54.0
@@ -153,6 +139,7 @@ custom_colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 custom_colors/clear_button_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 custom_colors/font_color_uneditable = Color( 0.878431, 0.878431, 0.878431, 1 )
 placeholder_text = "+ 添加卡片"
+OTS_ID = "ADD_CARD"
 
 [connection signal="focus_exited" from="tab/title/list_title" to="." method="_on_list_title_text_entered"]
 [connection signal="text_entered" from="tab/title/list_title" to="." method="_on_list_title_text_entered"]

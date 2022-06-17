@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/open_kanban/res/fonts/light.tres" type="DynamicFont" id=1]
 [ext_resource path="res://addons/open_kanban/res/box/inner_pressed.tres" type="StyleBox" id=2]
 [ext_resource path="res://addons/open_kanban/res/box/inner.tres" type="StyleBox" id=3]
+[ext_resource path="res://addons/open_kanban/system/tool_button.gd" type="Script" id=4]
 
 [node name="tool_button" type="ToolButton"]
 anchor_right = 1.0
@@ -20,3 +21,4 @@ custom_styles/normal = ExtResource( 3 )
 action_mode = 0
 keep_pressed_outside = true
 flat = false
+script = ExtResource( 4 )
