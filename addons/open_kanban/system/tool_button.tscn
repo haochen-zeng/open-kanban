@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/open_kanban/res/fonts/light.tres" type="DynamicFont" id=1]
-[ext_resource path="res://addons/open_kanban/res/box/inner_pressed.tres" type="StyleBox" id=2]
-[ext_resource path="res://addons/open_kanban/res/box/inner.tres" type="StyleBox" id=3]
+[ext_resource path="res://addons/open_kanban/res/box/outer.tres" type="StyleBox" id=2]
+[ext_resource path="res://addons/open_kanban/res/box/outer_pressed.tres" type="StyleBox" id=3]
 [ext_resource path="res://addons/open_kanban/system/tool_button.gd" type="Script" id=4]
 
 [node name="tool_button" type="ToolButton"]
@@ -13,11 +13,11 @@ custom_colors/font_color_focus = Color( 0.211765, 0.211765, 0.211765, 1 )
 custom_colors/font_color = Color( 0.352941, 0.352941, 0.352941, 1 )
 custom_colors/font_color_hover = Color( 0.211765, 0.211765, 0.211765, 1 )
 custom_fonts/font = ExtResource( 1 )
-custom_styles/hover = ExtResource( 2 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/focus = ExtResource( 2 )
-custom_styles/disabled = ExtResource( 2 )
-custom_styles/normal = ExtResource( 3 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 2 )
 action_mode = 0
 keep_pressed_outside = true
 flat = false

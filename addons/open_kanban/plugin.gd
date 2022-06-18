@@ -17,7 +17,7 @@ func _exit_tree():
 	remove_kanban()
 
 func get_plugin_name():
-	return "Open Kanban"
+	return OTS.translate("OPEN_KANBAN")
 
 func has_main_screen():
 	return true

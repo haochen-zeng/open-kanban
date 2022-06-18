@@ -1,9 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://addons/open_kanban/system/card.gd" type="Script" id=1]
 [ext_resource path="res://addons/open_kanban/res/fonts/light.tres" type="DynamicFont" id=2]
 [ext_resource path="res://addons/open_kanban/system/tool_button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/open_kanban/res/box/inner_pressed.tres" type="StyleBox" id=4]
 [ext_resource path="res://addons/open_kanban/system/drag_component.gd" type="Script" id=5]
+[ext_resource path="res://addons/open_kanban/res/box/inner.tres" type="StyleBox" id=6]
+[ext_resource path="res://addons/open_kanban/res/fonts/regular.tres" type="DynamicFont" id=7]
+[ext_resource path="res://addons/open_kanban/system/line_edit.tscn" type="PackedScene" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=7]
 
@@ -37,7 +41,11 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1024.0
 margin_bottom = 600.0
-mouse_default_cursor_shape = 13
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 6 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 9 )
 script = ExtResource( 5 )
@@ -50,6 +58,17 @@ mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 6 )
+
+[node name="list_title" parent="panel" instance=ExtResource( 8 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 1012.0
+margin_bottom = 588.0
+custom_fonts/font = ExtResource( 7 )
+max_length = 24
 
 [node name="title" type="Label" parent="panel"]
 margin_left = 12.0
