@@ -19,8 +19,8 @@ func _ready() -> void:
 
 func title_edit() -> void:
 	title_line_edit.grab_focus()
-	title_line_edit.set_cursor_position(title_line_edit.text.length())
 	title_line_edit.text = label.text
+	title_line_edit.set_cursor_position(title_line_edit.text.length())
 	title_line_edit.show()
 	label.hide()
 	button.hide()

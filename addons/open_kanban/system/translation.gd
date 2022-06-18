@@ -17,7 +17,9 @@ static func translate(value : String) -> String:
 	"UNTITLED" : ["Untitled", "未命名", "むだい"],
 	"EDIT" : ["Edit", "编辑", "エディット"],
 	"DELETE" : ["Delete", "删除", "デリート"],
-	"DUPLICATE" : ["Duplicate", "复制", "コピー"]
+	"DUPLICATE" : ["Duplicate", "复制", "コピー"],
+	"INSERT_BEFORE" : ["Insert before", "在前插入", "まえにインサート"],
+	"INSERT_AFTER" : ["Insert after", "在后插入", "のちにインサート"]
 	}
 	
 	match EditorSettings.new().get_setting("interface/editor/editor_language"):

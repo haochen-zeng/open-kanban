@@ -9,7 +9,7 @@ onready var drag_view = $drag_view
 onready var drag_view_label = $drag_view/panel/title
 var hscroll_max : float
 var vscroll_max : float
-var drag_component : Object setget set_drag_component
+var drag_component : Object
 var data : Dictionary = {"lists" : {}, "settings" : {}} setget set_data
 
 func _ready() -> void:
@@ -46,8 +46,8 @@ func _process(_delta) -> void:
 		drag_view.rect_global_position = get_global_mouse_position()
 		drag_view.rect_rotation = lerp(drag_view.rect_rotation, 0, 0.2)
 
-func set_drag_component(value : Object) -> void:
-	if value and value.type == "card":
+func set_drag_view(value : Object) -> void:
+	if value:
 		set_process(true)
 		drag_view.rect_rotation = 0
 		drag_view.get_child(0).rect_size = drag_view.get_child(0).rect_min_size
@@ -56,7 +56,6 @@ func set_drag_component(value : Object) -> void:
 	else:
 		set_process(false)
 		drag_view.hide()
-	drag_component = value
 
 func _exit_tree() -> void:
 	for list in hbox.get_children():

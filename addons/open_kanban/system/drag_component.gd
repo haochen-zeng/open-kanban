@@ -16,6 +16,7 @@ func button_down():
 
 func button_up():
 	if type == "card":
+		kanban.set_drag_view(null)
 		drag = false
 		box.modulate.a = 1
 	kanban.drag_component = null
@@ -24,6 +25,7 @@ func _input(event) -> void:
 	if event is InputEventMouseMotion and kanban.drag_component and kanban.drag_component != self:
 		if type == "card" and Rect2(box.rect.rect_global_position, box.rect.rect_size).has_point(get_global_mouse_position()) or type == "list" and Rect2(box.rect_global_position, box.rect_size).has_point(get_global_mouse_position()):
 			if !kanban.drag_component.drag and kanban.drag_component.type == "card":
+				kanban.set_drag_view(kanban.drag_component)
 				kanban.drag_component.drag = true
 			
 			if kanban.drag_component.box.get_parent() == box.get_parent():
