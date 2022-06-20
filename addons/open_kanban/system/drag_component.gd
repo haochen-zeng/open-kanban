@@ -12,10 +12,13 @@ func _ready() -> void:
 	connect("button_up", self, "button_up")
 
 func button_down():
+	if type == "card":
+		shortcut = load("res://addons/open_kanban/res/others/card.tres")
 	kanban.drag_component = self
 
 func button_up():
 	if type == "card":
+		shortcut = null
 		kanban.set_drag_view(null)
 		drag = false
 		box.modulate.a = 1

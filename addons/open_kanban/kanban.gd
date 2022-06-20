@@ -3,6 +3,7 @@ extends Control
 
 const list_scene = preload("res://addons/open_kanban/system/list.tscn")
 const card_scene = preload("res://addons/open_kanban/system/card.tscn")
+const context_menu = preload("res://addons/open_kanban/system/context_menu.tscn")
 onready var hbox = $panel/vbox/scroll/hbox
 onready var scroll = $panel/vbox/scroll
 onready var drag_view = $drag_view
@@ -10,13 +11,26 @@ onready var drag_view_label = $drag_view/panel/title
 var hscroll_max : float
 var vscroll_max : float
 var drag_component : Object
+
 var data : Dictionary = {"lists" : {}, "settings" : {}} setget set_data
 
 func _ready() -> void:
 	print(OTS.translate("WELCOME"))
+	self.data = OFS.load_kanban()
 	scroll.get_h_scrollbar().connect("changed", self, "push_hscroll")
 	scroll.get_v_scrollbar().connect("changed", self, "push_vscroll")
-	self.data = OFS.load_kanban()
+	if !InputMap.has_action("ok_left"):
+		InputMap.add_action("ok_left")
+		var ev = InputEventMouseButton.new()
+		ev.button_index = BUTTON_LEFT
+		InputMap.action_add_event("ok_left", ev)
+		ProjectSettings.save()
+	if !InputMap.has_action("ok_right"):
+		InputMap.add_action("ok_right")
+		var ev = InputEventMouseButton.new()
+		ev.button_index = BUTTON_RIGHT
+		InputMap.action_add_event("ok_right", ev)
+		ProjectSettings.save()
 
 func _on_add_pressed() -> void:
 	var scene = list_scene.instance()
@@ -35,7 +49,7 @@ func push_vscroll() -> void:
 	vscroll_max = scroll.get_v_scrollbar().max_value
 
 func _input(event) -> void:
-	if !Input.is_mouse_button_pressed(BUTTON_LEFT) and drag_component:
+	if event.is_action_released("ok_right") and drag_component:
 		drag_component.button_down()
 	if event is InputEventMouseMotion:
 		drag_view.rect_rotation += event.relative.x
@@ -78,3 +92,8 @@ func set_data(value : Dictionary) -> void:
 		for card in value["lists"][list]["cards"].keys():
 			list_instance.add_card(value["lists"][list]["cards"][card]["name"])
 	value = data
+
+func show_context_menu(value : Object) -> void:
+	var scene = context_menu.instance()
+	add_child(scene)
+	scene.target = value

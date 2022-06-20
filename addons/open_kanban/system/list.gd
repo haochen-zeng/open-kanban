@@ -44,6 +44,8 @@ func add_card(new_text):
 		card_line_edit.text = ""
 
 func _input(event) -> void:
+	if event.is_action_pressed("ok_right") and Rect2(rect_global_position, rect_size).has_point(get_global_mouse_position()) and !Rect2(container.rect_global_position, container.rect_size).has_point(get_global_mouse_position()):
+		kanban.show_context_menu(self)
 	if event is InputEventMouseMotion and container.get_child_count() == 1 and kanban.drag_component and kanban.drag_component.type == "card" and Rect2(add.rect_global_position, add.rect_size).has_point(get_global_mouse_position()):
 			kanban.drag_component.box.get_parent().remove_child(kanban.drag_component.box)
 			container.add_child(kanban.drag_component.box)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/open_kanban/res/fonts/light.tres" type="DynamicFont" id=1]
-[ext_resource path="res://addons/open_kanban/res/box/outer.tres" type="StyleBox" id=2]
-[ext_resource path="res://addons/open_kanban/res/box/outer_pressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://addons/open_kanban/res/boxes/outer.tres" type="StyleBox" id=2]
+[ext_resource path="res://addons/open_kanban/res/boxes/outer_pressed.tres" type="StyleBox" id=3]
 [ext_resource path="res://addons/open_kanban/system/tool_button.gd" type="Script" id=4]
 
 [node name="tool_button" type="ToolButton"]
