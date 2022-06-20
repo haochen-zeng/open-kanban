@@ -8,17 +8,13 @@ onready var hbox = $panel/vbox/scroll/hbox
 onready var scroll = $panel/vbox/scroll
 onready var drag_view = $drag_view
 onready var drag_view_label = $drag_view/panel/title
-var hscroll_max : float
-var vscroll_max : float
 var drag_component : Object
 
-var data : Dictionary = {"lists" : {}, "settings" : {}} setget set_data
+var data : Dictionary = {"version" : 0.1, "lists" : {}, "settings" : {}} setget set_data
 
 func _ready() -> void:
 	print(OTS.translate("WELCOME"))
 	self.data = OFS.load_kanban()
-	scroll.get_h_scrollbar().connect("changed", self, "push_hscroll")
-	scroll.get_v_scrollbar().connect("changed", self, "push_vscroll")
 	if !InputMap.has_action("ok_left"):
 		InputMap.add_action("ok_left")
 		var ev = InputEventMouseButton.new()
@@ -32,21 +28,23 @@ func _ready() -> void:
 		InputMap.action_add_event("ok_right", ev)
 		ProjectSettings.save()
 
-func _on_add_pressed() -> void:
+func add_list(title : String = "", index : int = hbox.get_child_count() - 1) -> void:
 	var scene = list_scene.instance()
 	hbox.add_child(scene)
-	hbox.move_child(scene, hbox.get_child_count() - 2)
-	scene.title_edit()
+	hbox.move_child(scene, index)
+	if title:
+		scene.set_title(title)
+	else:
+		scene.title_edit()
+	push_hscroll()
 
 func push_hscroll() -> void:
-	if hscroll_max < scroll.get_h_scrollbar().max_value and !drag_component:
-		scroll.scroll_horizontal = scroll.get_h_scrollbar().max_value
-	hscroll_max = scroll.get_h_scrollbar().max_value
+	yield(scroll.get_h_scrollbar(), "changed")
+	scroll.scroll_horizontal = scroll.get_h_scrollbar().max_value
 
 func push_vscroll() -> void:
-	if vscroll_max < scroll.get_v_scrollbar().max_value and !drag_component:
-		scroll.scroll_vertical = scroll.get_v_scrollbar().max_value
-	vscroll_max = scroll.get_v_scrollbar().max_value
+	yield(scroll.get_v_scrollbar(), "changed")
+	scroll.scroll_vertical = scroll.get_v_scrollbar().max_value
 
 func _input(event) -> void:
 	if event.is_action_released("ok_right") and drag_component:
@@ -90,7 +88,7 @@ func set_data(value : Dictionary) -> void:
 		list_instance.set_title(value["lists"][list]["name"])
 		hbox.move_child(list_instance, int(list))
 		for card in value["lists"][list]["cards"].keys():
-			list_instance.add_card(value["lists"][list]["cards"][card]["name"])
+			list_instance.add_card(value["lists"][list]["cards"][card]["name"], int(card))
 	value = data
 
 func show_context_menu(value : Object) -> void:

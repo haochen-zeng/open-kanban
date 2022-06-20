@@ -25,7 +25,7 @@ margin_bottom = 63.0
 rect_min_size = Vector2( 245, 126 )
 focus_mode = 2
 mouse_filter = 0
-size_flags_vertical = 3
+size_flags_vertical = 0
 custom_constants/separation = 6
 script = ExtResource( 8 )
 

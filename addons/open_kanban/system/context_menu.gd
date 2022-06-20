@@ -9,14 +9,10 @@ func set_target(value : Object) -> void:
 	rect_global_position.x += value.rect_size.x
 	type = value.drag_button.type
 	if type == "list":
-		$vbox/duplicate.hide()
 		rect_global_position.x += 12
 	else:
 		rect_global_position.y -= 12
 		rect_global_position.x += 24
-	var i = $vbox.get_child_count()
-	rect_size.y = 48 * i + (i - 1) * 6 + 12 * 2
-	show()
 	target = value
 
 func _input(event) -> void:
@@ -24,19 +20,21 @@ func _input(event) -> void:
 		exit()
 
 func _on_edit_pressed():
-	if type == "list":
+	if type == "list": 
 		target.title_edit()
 	else:
 		target.title_edit(true)
 
 func _on_insert_before_pressed():
-	pass # Replace with function body.
+	target.parent.call("add_" + type, "", target.get_index())
 
 func _on_insert_after_pressed():
-	pass # Replace with function body.
+	target.parent.call("add_" + type, "", target.get_index() + 1)
 
 func _on_duplicate_pressed():
-	pass # Replace with function body.
+	var i = target.duplicate(7)
+	target.get_parent().add_child(i)
+	target.get_parent().move_child(i, target.get_index() + 1)
 
 func _on_delete_pressed():
 	target.queue_free()

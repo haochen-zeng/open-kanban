@@ -14,7 +14,6 @@ static func translate(value : String) -> String:
 	"FILTER" : ["Filter", "筛选", "スクリーニング"],
 	"SORT" : ["Sort", "排列", "アレンジメント"],
 	"SETTINGS" : ["Settings", "设置", "せってい"],
-	"UNTITLED" : ["Untitled", "未命名", "むだい"],
 	"EDIT" : ["Edit", "编辑", "エディット"],
 	"DELETE" : ["Delete", "删除", "デリート"],
 	"DUPLICATE" : ["Duplicate", "复制", "コピー"],

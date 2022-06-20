@@ -6,6 +6,7 @@ onready var title = $panel/title
 onready var title_line_edit = $panel/card_title
 onready var drag_button = $drag
 onready var rect = $rect
+onready var parent = $"../../.."
 
 func _ready() -> void:
 	drag_button.box = $"."
