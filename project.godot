@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "OTS",
 "language": "GDScript",
 "path": "res://addons/open_kanban/system/translation.gd"
+}, {
+"base": "PanelContainer",
+"class": "Rect",
+"language": "GDScript",
+"path": "res://addons/open_kanban/system/rect.gd"
 } ]
 _global_script_class_icons={
 "DragComponent": "",
 "OFS": "",
-"OTS": ""
+"OTS": "",
+"Rect": ""
 }
 
 [application]

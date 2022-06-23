@@ -10,7 +10,7 @@ onready var drag_view = $drag_view
 onready var drag_view_label = $drag_view/panel/title
 var drag_component : Object
 
-var data : Dictionary = {"version" : 0.1, "lists" : {}, "settings" : {}} setget set_data
+var data : Dictionary = {"version" : 0.1, "lists" : {}, "settings" : {"lang" : "en"}} setget set_data
 
 func _ready() -> void:
 	print(OTS.translate("WELCOME"))

@@ -11,7 +11,7 @@ onready var button = $tab/title/button
 onready var num = $tab/num
 onready var container = $container/vbox
 onready var card_line_edit = $container/vbox/add/card_title
-onready var parent = $"../../../../.."
+var parent : NodePath = @"../../../../.."
 const card = preload("res://addons/open_kanban/system/card.tscn")
 
 func _ready() -> void:

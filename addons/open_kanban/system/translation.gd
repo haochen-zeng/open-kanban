@@ -21,7 +21,7 @@ static func translate(value : String) -> String:
 	"INSERT_AFTER" : ["Insert after", "在后插入", "のちにインサート"]
 	}
 	
-	match EditorSettings.new().get_setting("interface/editor/editor_language"):
+	match "en":
 		"zh", "zh_CN", "zh_TW":
 			array_index = 1
 		"ja":

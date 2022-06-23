@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/open_kanban/system/context_menu.gd" type="Script" id=1]
+[ext_resource path="res://addons/open_kanban/res/fonts/regular.tres" type="DynamicFont" id=2]
 [ext_resource path="res://addons/open_kanban/system/tool_button.tscn" type="PackedScene" id=3]
-[ext_resource path="res://addons/open_kanban/res/boxes/dark_outer.tres" type="StyleBox" id=4]
+[ext_resource path="res://addons/open_kanban/res/boxes/outer.tres" type="StyleBox" id=4]
 [ext_resource path="res://addons/open_kanban/res/boxes/inner.tres" type="StyleBox" id=5]
 [ext_resource path="res://addons/open_kanban/res/boxes/inner_pressed.tres" type="StyleBox" id=6]
 
@@ -39,7 +40,7 @@ custom_styles/pressed = ExtResource( 6 )
 custom_styles/focus = ExtResource( 6 )
 custom_styles/disabled = ExtResource( 6 )
 custom_styles/normal = ExtResource( 5 )
-text = "编辑"
+text = "Edit"
 align = 0
 OTS_ID = "EDIT"
 
@@ -55,7 +56,7 @@ custom_styles/pressed = ExtResource( 6 )
 custom_styles/focus = ExtResource( 6 )
 custom_styles/disabled = ExtResource( 6 )
 custom_styles/normal = ExtResource( 5 )
-text = "复制"
+text = "Duplicate"
 align = 0
 OTS_ID = "DUPLICATE"
 
@@ -71,7 +72,7 @@ custom_styles/pressed = ExtResource( 6 )
 custom_styles/focus = ExtResource( 6 )
 custom_styles/disabled = ExtResource( 6 )
 custom_styles/normal = ExtResource( 5 )
-text = "在前插入"
+text = "Insert before"
 align = 0
 OTS_ID = "INSERT_BEFORE"
 
@@ -87,7 +88,7 @@ custom_styles/pressed = ExtResource( 6 )
 custom_styles/focus = ExtResource( 6 )
 custom_styles/disabled = ExtResource( 6 )
 custom_styles/normal = ExtResource( 5 )
-text = "在后插入"
+text = "Insert after"
 align = 0
 OTS_ID = "INSERT_AFTER"
 
@@ -98,22 +99,26 @@ margin_top = 216.0
 margin_right = 221.0
 margin_bottom = 264.0
 rect_min_size = Vector2( 221, 48 )
+custom_colors/font_color_focus = Color( 0.917647, 0.309804, 0.211765, 1 )
+custom_colors/font_color = Color( 0.960784, 0.490196, 0.290196, 1 )
+custom_colors/font_color_hover = Color( 0.917647, 0.309804, 0.211765, 1 )
+custom_fonts/font = ExtResource( 2 )
 custom_styles/hover = ExtResource( 6 )
 custom_styles/pressed = ExtResource( 6 )
 custom_styles/focus = ExtResource( 6 )
 custom_styles/disabled = ExtResource( 6 )
 custom_styles/normal = ExtResource( 5 )
-text = "删除"
+text = "Delete"
 align = 0
 OTS_ID = "DELETE"
 
-[connection signal="pressed" from="vbox/edit" to="." method="_on_edit_pressed"]
 [connection signal="pressed" from="vbox/edit" to="." method="exit"]
-[connection signal="pressed" from="vbox/duplicate" to="." method="_on_duplicate_pressed"]
+[connection signal="pressed" from="vbox/edit" to="." method="_on_edit_pressed"]
 [connection signal="pressed" from="vbox/duplicate" to="." method="exit"]
-[connection signal="pressed" from="vbox/insert_before" to="." method="_on_insert_before_pressed"]
+[connection signal="pressed" from="vbox/duplicate" to="." method="_on_duplicate_pressed"]
 [connection signal="pressed" from="vbox/insert_before" to="." method="exit"]
-[connection signal="pressed" from="vbox/insert_after" to="." method="_on_insert_after_pressed"]
+[connection signal="pressed" from="vbox/insert_before" to="." method="_on_insert_before_pressed"]
 [connection signal="pressed" from="vbox/insert_after" to="." method="exit"]
-[connection signal="pressed" from="vbox/delete" to="." method="_on_delete_pressed"]
+[connection signal="pressed" from="vbox/insert_after" to="." method="_on_insert_after_pressed"]
 [connection signal="pressed" from="vbox/delete" to="." method="exit"]
+[connection signal="pressed" from="vbox/delete" to="." method="_on_delete_pressed"]
