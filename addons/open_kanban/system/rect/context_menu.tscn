@@ -112,13 +112,13 @@ text = "删除"
 align = 0
 OTS_ID = "DELETE"
 
-[connection signal="pressed" from="vbox/edit" to="." method="exit"]
 [connection signal="pressed" from="vbox/edit" to="." method="_on_edit_pressed"]
-[connection signal="pressed" from="vbox/duplicate" to="." method="exit"]
+[connection signal="pressed" from="vbox/edit" to="." method="exit"]
 [connection signal="pressed" from="vbox/duplicate" to="." method="_on_duplicate_pressed"]
+[connection signal="pressed" from="vbox/duplicate" to="." method="exit"]
 [connection signal="pressed" from="vbox/insert_before" to="." method="_on_insert_before_pressed"]
 [connection signal="pressed" from="vbox/insert_before" to="." method="exit"]
 [connection signal="pressed" from="vbox/insert_after" to="." method="_on_insert_after_pressed"]
 [connection signal="pressed" from="vbox/insert_after" to="." method="exit"]
-[connection signal="pressed" from="vbox/delete" to="." method="exit"]
 [connection signal="pressed" from="vbox/delete" to="." method="_on_delete_pressed"]
+[connection signal="pressed" from="vbox/delete" to="." method="exit"]

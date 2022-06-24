@@ -21,4 +21,5 @@ func set_rect(target_input : Object, type_input : String) -> void:
 	type = type_input
 
 func exit() -> void:
+	kanban.highlight.hide()
 	queue_free()

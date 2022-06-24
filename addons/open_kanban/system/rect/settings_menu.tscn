@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/open_kanban/system/rect/settings_menu.gd" type="Script" id=1]
 [ext_resource path="res://addons/open_kanban/res/boxes/dark_outer.tres" type="StyleBox" id=2]
 [ext_resource path="res://addons/open_kanban/res/fonts/light.tres" type="DynamicFont" id=3]
 [ext_resource path="res://addons/open_kanban/res/boxes/inner.tres" type="StyleBox" id=4]
 [ext_resource path="res://addons/open_kanban/res/boxes/inner_pressed.tres" type="StyleBox" id=5]
-[ext_resource path="res://addons/open_kanban/res/images/ui/language.png" type="Texture" id=6]
 
 [node name="settings_menu" type="PanelContainer"]
 anchor_left = 0.5
@@ -34,15 +33,7 @@ margin_right = 221.0
 margin_bottom = 48.0
 custom_constants/separation = 6
 
-[node name="texture" type="TextureRect" parent="vbox/lang"]
-margin_right = 64.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 64, 48 )
-texture = ExtResource( 6 )
-expand = true
-
 [node name="option" type="OptionButton" parent="vbox/lang"]
-margin_left = 70.0
 margin_right = 221.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 0, 48 )
@@ -57,9 +48,9 @@ custom_styles/pressed = ExtResource( 5 )
 custom_styles/focus = ExtResource( 5 )
 custom_styles/disabled = ExtResource( 4 )
 custom_styles/normal = ExtResource( 4 )
-text = "English"
-items = [ "English", null, false, 0, null, "中文", null, false, 1, null, "にほんこ°", null, false, 2, null, "English", null, false, 3, null, "中文", null, false, 4, null, "にほんこ°", null, false, 5, null, "English", null, false, 6, null, "中文", null, false, 7, null, "にほんこ°", null, false, 8, null ]
-selected = 0
+text = "中文"
+items = [ "English", null, false, 0, null, "中文", null, false, 1, null, "にほんこ°", null, false, 2, null ]
+selected = 1
 
 [connection signal="item_selected" from="vbox/lang/option" to="." method="_on_option_item_selected"]
 [connection signal="toggled" from="vbox/lang/option" to="." method="_on_option_toggled"]

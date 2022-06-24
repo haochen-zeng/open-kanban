@@ -5,6 +5,7 @@ const list_scene = preload("res://addons/open_kanban/system/list.tscn")
 const card_scene = preload("res://addons/open_kanban/system/card.tscn")
 const context_menu = preload("res://addons/open_kanban/system/rect/context_menu.tscn")
 const settings_menu = preload("res://addons/open_kanban/system/rect/settings_menu.tscn")
+onready var highlight = $highlight
 onready var hbox = $panel/vbox/scroll/hbox
 onready var scroll = $panel/vbox/scroll
 onready var drag_view = $drag_view
@@ -72,7 +73,7 @@ func set_drag_view(value : Object) -> void:
 		drag_view.hide()
 
 func _exit_tree() -> void:
-	data["lists"] = []
+	data["lists"] = {}
 	for list in hbox.get_children():
 		var list_index = list.get_index()
 		if list.name != "add":
@@ -104,3 +105,11 @@ func _on_settings_pressed():
 	var scene = settings_menu.instance()
 	add_child(scene)
 	scene.set_rect(settings_button, "tab_panel")
+
+func highlight(value : Object) -> void:
+	highlight.rect_global_position = value.rect_global_position
+	highlight.rect_size = value.rect_size
+	highlight.show()
+
+func scroll_include(value : Object) -> void:
+	scroll.ensure_control_visible(value)
