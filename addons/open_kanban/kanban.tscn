@@ -119,7 +119,7 @@ anchor_bottom = 0.0
 margin_left = 60.0
 margin_right = 84.0
 margin_bottom = 48.0
-text = "页面"
+text = "Page"
 OTS_ID = "PAGE"
 
 [node name="search" parent="panel/vbox/tab" instance=ExtResource( 9 )]
@@ -129,7 +129,7 @@ anchor_bottom = 0.0
 margin_left = 60.0
 margin_right = 84.0
 margin_bottom = 48.0
-text = "搜索"
+text = "Search"
 OTS_ID = "SEARCH"
 
 [node name="filter" parent="panel/vbox/tab" instance=ExtResource( 9 )]
@@ -139,7 +139,7 @@ anchor_bottom = 0.0
 margin_left = 60.0
 margin_right = 116.0
 margin_bottom = 48.0
-text = "筛选"
+text = "Filter"
 OTS_ID = "FILTER"
 
 [node name="sort" parent="panel/vbox/tab" instance=ExtResource( 9 )]
@@ -149,7 +149,7 @@ anchor_bottom = 0.0
 margin_left = 60.0
 margin_right = 116.0
 margin_bottom = 48.0
-text = "排列"
+text = "Sort"
 OTS_ID = "SORT"
 
 [node name="settings" parent="panel/vbox/tab" instance=ExtResource( 9 )]
@@ -189,7 +189,7 @@ margin_right = 1016.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 245, 126 )
 size_flags_vertical = 0
-text = "+ 添加列表"
+text = "+ Add list"
 OTS_ID = "ADD_LIST"
 
 [node name="drag_view" type="CenterContainer" parent="."]
