@@ -118,7 +118,7 @@ anchor_bottom = 0.0
 margin_left = 60.0
 margin_right = 84.0
 margin_bottom = 48.0
-text = "Page"
+text = "页面"
 OTS_ID = "PAGE"
 
 [node name="search" parent="panel/vbox/tab" instance=ExtResource( 9 )]
@@ -128,7 +128,7 @@ anchor_bottom = 0.0
 margin_left = 60.0
 margin_right = 84.0
 margin_bottom = 48.0
-text = "Search"
+text = "搜索"
 OTS_ID = "SEARCH"
 
 [node name="filter" parent="panel/vbox/tab" instance=ExtResource( 9 )]
@@ -138,7 +138,7 @@ anchor_bottom = 0.0
 margin_left = 60.0
 margin_right = 116.0
 margin_bottom = 48.0
-text = "Filter"
+text = "筛选"
 OTS_ID = "FILTER"
 
 [node name="sort" parent="panel/vbox/tab" instance=ExtResource( 9 )]
@@ -148,7 +148,7 @@ anchor_bottom = 0.0
 margin_left = 60.0
 margin_right = 116.0
 margin_bottom = 48.0
-text = "Sort"
+text = "排列"
 OTS_ID = "SORT"
 
 [node name="settings" parent="panel/vbox/tab" instance=ExtResource( 9 )]
@@ -173,7 +173,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="hbox" type="HBoxContainer" parent="panel/vbox/scroll"]
-margin_right = 1273.0
+margin_right = 1016.0
 margin_bottom = 504.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -182,12 +182,12 @@ custom_constants/separation = 12
 [node name="add" parent="panel/vbox/scroll/hbox" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1028.0
-margin_right = 1273.0
+margin_left = 771.0
+margin_right = 1016.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 245, 126 )
 size_flags_vertical = 0
-text = "+ Add list"
+text = "+ 添加列表"
 OTS_ID = "ADD_LIST"
 
 [node name="drag_view" type="CenterContainer" parent="."]
@@ -196,10 +196,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -366.777
-margin_top = -65.4357
-margin_right = -366.777
-margin_bottom = -65.4357
+margin_left = 111.754
+margin_top = -269.834
+margin_right = 111.754
+margin_bottom = -269.834
 use_top_left = true
 
 [node name="panel" type="PanelContainer" parent="drag_view"]
@@ -225,4 +225,5 @@ custom_styles/normal = SubResource( 5 )
 valign = 1
 autowrap = true
 
+[connection signal="pressed" from="panel/vbox/tab/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="panel/vbox/scroll/hbox/add" to="." method="add_list"]

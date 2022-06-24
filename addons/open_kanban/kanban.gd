@@ -3,18 +3,20 @@ extends Control
 
 const list_scene = preload("res://addons/open_kanban/system/list.tscn")
 const card_scene = preload("res://addons/open_kanban/system/card.tscn")
-const context_menu = preload("res://addons/open_kanban/system/context_menu.tscn")
+const context_menu = preload("res://addons/open_kanban/system/rect/context_menu.tscn")
+const settings_menu = preload("res://addons/open_kanban/system/rect/settings_menu.tscn")
 onready var hbox = $panel/vbox/scroll/hbox
 onready var scroll = $panel/vbox/scroll
 onready var drag_view = $drag_view
 onready var drag_view_label = $drag_view/panel/title
+onready var settings_button = $panel/vbox/tab/settings
 var drag_component : Object
 
-var data : Dictionary = {"version" : 0.1, "lists" : {}, "settings" : {"lang" : "en"}} setget set_data
+var data : Dictionary = {"version" : 0.1, "lists" : {}, "settings" : {"lang" : "en"}}
 
 func _ready() -> void:
 	print(OTS.translate("WELCOME"))
-	self.data = OFS.load_kanban()
+	initiate(OFS.load_kanban())
 	if !InputMap.has_action("ok_left"):
 		InputMap.add_action("ok_left")
 		var ev = InputEventMouseButton.new()
@@ -70,6 +72,7 @@ func set_drag_view(value : Object) -> void:
 		drag_view.hide()
 
 func _exit_tree() -> void:
+	data["lists"] = []
 	for list in hbox.get_children():
 		var list_index = list.get_index()
 		if list.name != "add":
@@ -81,7 +84,7 @@ func _exit_tree() -> void:
 			data["lists"][list_index] = {"name" : list.get_title(), "cards" : cards}
 	OFS.save_kanban(data)
 
-func set_data(value : Dictionary) -> void:
+func initiate(value : Dictionary) -> void:
 	for list in value["lists"].keys():
 		var list_instance = list_scene.instance()
 		hbox.add_child(list_instance)
@@ -89,9 +92,15 @@ func set_data(value : Dictionary) -> void:
 		hbox.move_child(list_instance, int(list))
 		for card in value["lists"][list]["cards"].keys():
 			list_instance.add_card(value["lists"][list]["cards"][card]["name"], int(card))
-	value = data
+	data = value
+	get_tree().call_group("tr", "translate")
 
-func show_context_menu(value : Object) -> void:
+func show_context_menu(target : Object, type : String) -> void:
 	var scene = context_menu.instance()
 	add_child(scene)
-	scene.target = value
+	scene.set_rect(target, type)
+
+func _on_settings_pressed():
+	var scene = settings_menu.instance()
+	add_child(scene)
+	scene.set_rect(settings_button, "tab_panel")

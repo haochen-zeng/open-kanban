@@ -21,8 +21,8 @@ static func translate(value : String) -> String:
 	"INSERT_AFTER" : ["Insert after", "在后插入", "のちにインサート"]
 	}
 	
-	match "en":
-		"zh", "zh_CN", "zh_TW":
+	match EditorPlugin.new().get_editor_interface().get_editor_viewport().get_node("kanban").data["settings"]["lang"]:
+		"zh":
 			array_index = 1
 		"ja":
 			array_index = 2

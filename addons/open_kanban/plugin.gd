@@ -17,7 +17,7 @@ func _exit_tree():
 	remove_kanban()
 
 func get_plugin_name():
-	return OTS.translate("OPEN_KANBAN")
+	return "Open Kanban"
 
 func has_main_screen():
 	return true
@@ -34,7 +34,7 @@ func make_visible(visible):
 		kanban.visible = visible
 
 func add_kanban():
-	kanban = preload("res://addons/open_kanban/kanban.tscn").instance()
+	kanban = load("res://addons/open_kanban/kanban.tscn").instance()
 
 func remove_kanban():
 	if kanban:

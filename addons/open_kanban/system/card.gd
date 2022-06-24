@@ -33,4 +33,4 @@ func get_title() -> String:
 
 func _input(event):
 	if event.is_action_pressed("ok_right") and Rect2(rect_global_position, rect_size).has_point(get_global_mouse_position()):
-		kanban.show_context_menu(self)
+		kanban.show_context_menu(self, "card")

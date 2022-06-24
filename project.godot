@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "PanelContainer",
 "class": "Rect",
 "language": "GDScript",
-"path": "res://addons/open_kanban/system/rect.gd"
+"path": "res://addons/open_kanban/system/rect/rect.gd"
 } ]
 _global_script_class_icons={
 "DragComponent": "",
@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Open Kanban"
-config/description="Open Kanban is a workflow management tool for managing and improving game projects.
+config/description="Open Kanban is a workflow management tool.
 It helps you visualize work, maximize efficiency, and improve continuously.
 
 开源看板是一个工作流程管理工具。

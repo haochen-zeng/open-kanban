@@ -20,3 +20,7 @@ func _on_duplicate_pressed():
 
 func _on_delete_pressed():
 	target.queue_free()
+
+func _input(event) -> void:
+	if (event.is_action_pressed("ok_left") or event.is_action_pressed("ok_right")) and !Rect2(rect_global_position, rect_size).has_point(get_global_mouse_position()):
+		exit()
