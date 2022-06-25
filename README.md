@@ -8,6 +8,10 @@ Open Kanban is a godot workflow management plugin. It helps you visualize work, 
 
 ---
 
+<img src="https://github.com/EXSPIRAVIT1104OFFICIAL/open-kanban/blob/main/press%20kit/v0.1.png">
+
+---
+
 Support me on [Patreon](https://patreon.com/exspiravit1104)
 
 在[爱发电](https://afdian.net/@exspiravit)上支持我
