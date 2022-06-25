@@ -63,10 +63,11 @@ func _process(_delta) -> void:
 		drag_view.rect_global_position = get_global_mouse_position()
 		drag_view.rect_rotation = lerp(drag_view.rect_rotation, 0, 0.2)
 	
-	if drag_move_h:
-		scroll.get_h_scrollbar().value += drag_move_h * 8
-	if drag_move_v:
-		scroll.get_v_scrollbar().value += drag_move_v * 8
+	if drag_component:
+		if drag_move_h:
+			scroll.get_h_scrollbar().value += drag_move_h * 8
+		if drag_move_v:
+			scroll.get_v_scrollbar().value += drag_move_v * 8
 
 func set_drag_view(value : Object) -> void:
 	if value:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/open_kanban/system/rect/settings_menu.gd" type="Script" id=1]
-[ext_resource path="res://addons/open_kanban/res/boxes/dark_outer.tres" type="StyleBox" id=2]
+[ext_resource path="res://addons/open_kanban/res/boxes/orange_outer_pressed.tres" type="StyleBox" id=2]
 [ext_resource path="res://addons/open_kanban/res/fonts/light.tres" type="DynamicFont" id=3]
 [ext_resource path="res://addons/open_kanban/res/boxes/inner.tres" type="StyleBox" id=4]
 [ext_resource path="res://addons/open_kanban/res/boxes/inner_pressed.tres" type="StyleBox" id=5]
