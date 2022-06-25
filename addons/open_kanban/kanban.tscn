@@ -198,10 +198,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 439.077
-margin_top = -53.7391
-margin_right = 439.077
-margin_bottom = -53.7391
+margin_left = -143.851
+margin_top = 766.03
+margin_right = -143.851
+margin_bottom = 766.03
 use_top_left = true
 
 [node name="panel" type="PanelContainer" parent="drag_view"]
