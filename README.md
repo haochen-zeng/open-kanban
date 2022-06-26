@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://user-images.githubusercontent.com/80319225/173223070-1031ddf9-0f7d-4f8e-bcc6-bd8752925cdf.png" width="250">
+ <img src="https://user-images.githubusercontent.com/80319225/175807247-9ec769cd-cf72-4b48-be31-83ab49619559.png" width="250">
 </p>
 
 Open Kanban is a godot workflow management plugin. It helps you visualize work, maximize efficiency, and improve continuously.
