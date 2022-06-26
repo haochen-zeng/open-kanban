@@ -160,6 +160,7 @@ margin_right = 1000.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 10
+toggle_mode = true
 
 [node name="texture" type="TextureRect" parent="panel/vbox/tab/settings"]
 anchor_right = 1.0
@@ -198,10 +199,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -143.851
-margin_top = 766.03
-margin_right = -143.851
-margin_bottom = 766.03
+margin_left = 1090.2
+margin_top = -718.964
+margin_right = 1090.2
+margin_bottom = -718.964
 use_top_left = true
 
 [node name="panel" type="PanelContainer" parent="drag_view"]

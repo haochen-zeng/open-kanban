@@ -20,7 +20,7 @@ static func load_kanban() -> Dictionary:
 					"name": "Introduction",
 					"cards": {
 						"0": {"name": "Welcome to Open Kanban"},
-						"1": {"name": "Press the left mouse button to drag cards or lists,"},
+						"1": {"name": "Press the left mouse button to drag cards or lists"},
 						"2": {"name": "Press the right mouse button to show the context menu"},
 						"3": {"name": "Press the setting button to change the language used in Open Kanban"},
 						"4": {"name": "づ￣ 3￣)づ"}
