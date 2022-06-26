@@ -3,11 +3,6 @@ class_name OFS
 
 static func load_kanban() -> Dictionary:
 	var file = File.new()
-	if !Directory.new().file_exists("user://open-kanban/do not delete this 'data.json' file !!!.txt"):
-		var f = File.new()
-		file.open("user://open-kanban/do not delete this 'data.json' file !!!.txt", File.WRITE)
-		file.close()
-	
 	if file.open("user://open-kanban/data.json", File.READ) == OK:
 		var value = parse_json(file.get_as_text())
 		file.close()
@@ -22,8 +17,9 @@ static func load_kanban() -> Dictionary:
 						"0": {"name": "Welcome to Open Kanban"},
 						"1": {"name": "Press the left mouse button to drag cards or lists"},
 						"2": {"name": "Press the right mouse button to show the context menu"},
-						"3": {"name": "Press the setting button to change the language used in Open Kanban"},
-						"4": {"name": "づ￣ 3￣)づ"}
+						"3": {"name": "Click on the card to edit its name"},
+						"4": {"name": "Press the setting button to change the language used in Open Kanban"},
+						"5": {"name": "づ￣ 3￣)づ"}
 					}
 				},
 				"1": {
@@ -42,7 +38,7 @@ static func load_kanban() -> Dictionary:
 					"name": "Done",
 					"cards": {}
 				}
-			}, 
+			},
 			"settings" : {
 				"lang" : "en"
 			}

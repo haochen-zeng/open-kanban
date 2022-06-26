@@ -176,8 +176,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="hbox" type="HBoxContainer" parent="panel/vbox/scroll"]
-margin_right = 1016.0
-margin_bottom = 504.0
+margin_right = 988.0
+margin_bottom = 774.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 12
@@ -185,8 +185,8 @@ custom_constants/separation = 12
 [node name="add" parent="panel/vbox/scroll/hbox" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 771.0
-margin_right = 1016.0
+margin_left = 257.0
+margin_right = 502.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 245, 126 )
 size_flags_vertical = 0
@@ -199,10 +199,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 1090.2
-margin_top = -718.964
-margin_right = 1090.2
-margin_bottom = -718.964
+margin_left = -158.556
+margin_top = 614.463
+margin_right = -158.556
+margin_bottom = 614.463
 use_top_left = true
 
 [node name="panel" type="PanelContainer" parent="drag_view"]

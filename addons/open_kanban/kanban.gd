@@ -11,6 +11,7 @@ onready var scroll = $panel/vbox/scroll
 onready var drag_view = $drag_view
 onready var drag_view_label = $drag_view/panel/title
 onready var settings_button = $panel/vbox/tab/settings
+var initiated : bool = false
 var drag_component : Object
 var drag_move_h : float
 var drag_move_v : float
@@ -44,12 +45,14 @@ func add_list(title : String = "", index : int = hbox.get_child_count() - 1) -> 
 	push_hscroll()
 
 func push_hscroll() -> void:
-	yield(scroll.get_h_scrollbar(), "changed")
-	scroll.scroll_horizontal = scroll.get_h_scrollbar().max_value
+	if initiated:
+		yield(scroll.get_h_scrollbar(), "changed")
+		scroll.scroll_horizontal = scroll.get_h_scrollbar().max_value
 
 func push_vscroll() -> void:
-	yield(scroll.get_v_scrollbar(), "changed")
-	scroll.scroll_vertical = scroll.get_v_scrollbar().max_value
+	if initiated:
+		yield(scroll.get_v_scrollbar(), "changed")
+		scroll.scroll_vertical = scroll.get_v_scrollbar().max_value
 
 func _input(event) -> void:
 	if event.is_action_released("ok_right") and drag_component:
@@ -103,6 +106,7 @@ func initiate(value : Dictionary) -> void:
 			list_instance.add_card(value["lists"][list]["cards"][card]["name"], int(card))
 	data = value
 	get_tree().call_group("tr", "translate")
+	initiated = true
 
 func show_context_menu(target : Object, type : String) -> void:
 	var scene = context_menu.instance()
